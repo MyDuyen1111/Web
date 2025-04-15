@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Đề 1</title>
+        <meta charset="utf-8">
+        <style>
+            *{
+                padding: 0px;
+                margin: 0px;
+                box-sizing: border-box;
+            }
+
+            header{    
+                padding: 0px;
+                width: 1320px;
+                height: 100px;
+            }
+
+            header>img {
+                width: 1320px;
+                height: 100px;
+            }
+
+            main {
+                display: flex;
+                gap: 20px;
+            }
+
+            nav {
+                height: 350px;
+                background-color: #8AD385;
+                width: 160px;
+            }
+
+            nav>ul {
+                display: grid;
+                grid-template-rows: auto auto auto auto auto auto auto auto;
+                list-style-type: none;
+                width: 150px;
+                height: 350px;
+            }
+
+            nav>ul>li {
+                width: 150px;
+                height: 50px;
+            }
+
+            nav>ul>li>a {
+                text-decoration: none;
+                line-height: 50px;
+                color: black;
+                border-bottom: 1px solid white;
+                display: inline-block;
+                width: 160px;
+                text-align: left;
+                padding-left: 10px;
+            }
+
+            nav>ul>li>a:hover {
+                background-color: #CDE2CD;
+            }
+
+            .cha {
+                position: relative;
+            }
+
+            .con {
+                position: absolute;
+                width: 200px;
+                height: 100px;
+                background-color: #8AD385;
+                list-style-position: inside;
+                display: none;
+                left: 160px;
+                top: 0px;
+            }
+
+            .cha:hover .con {
+                display: block;
+            }
+
+            .con>li {
+                padding-left: 10px;
+            }
+
+            .con>li>a {
+                text-decoration: none;
+                color: black;
+                line-height: 30px;
+            }
+
+            section {
+                flex: 1;
+                display: flex;
+                grid-template-columns: 30% 50%;
+                margin-top: 10px;
+            }
+
+            section h2 {
+                margin-bottom: 15px;
+            }
+
+
+
+            footer {
+                height: 50px;
+                background-color: black;
+                line-height: 50px;
+                text-align: center;
+                color: #004080;
+                font-weight: bold;
+                margin-top: 164px;
+            }
+        </style>
+    </head>
+
+    <body>
+        <header>
+            <img src="Banner.png" alt="Banner">
+        </header>
+        <div class="main">
+            <nav>
+                <ul>
+                    <li><a href="#">Trang chủ</a></li>
+                    <li class="cha"><a href="#">Siêu thị sách</a>
+                        <ul class="con">
+                            <li><a href="#">Sách mới</a></li>
+                            <li><a href="#">Sách bán chạy</a></li>
+                            <li><a href="#">Bảng giá danh mục sách</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="#">Siêu thị thành nghĩa</a></li>
+                    <li><a href="#">Công ty in-DV in ấn</a></li>
+                    <li><a href="#">Tuyển dụng</a></li>
+                    <li><a href="#">Tin tức</a></li>
+                    <li><a href="#">Kiểm kê kho</a></li>
+                </ul>
+            </nav>
+
+            <section>
+                <div id="left">
+                    <h2>Hệ thống siêu thị - Nhà sách</h2>
+                    <ul>
+                        <li><a href="#">Nhà sách NGUYỄN VĂN CỪ chi nhánh QUẬN 1</a></li>
+                        <li><a href="#">Nhà sách NGUYỄN VĂN CỪ chi nhánh TÂY NINH</a></li>
+                        <li><a href="#">Siêu thị SINH VIÊN chi nhánh THỦ ĐỨC</a></li>
+                        <li><a href="#">Siêu thị THÀNH NGHĨA chi nhánh QUẬN 9</a></li>
+                        <li><a href="#">Siêu thị VĂN HÓA TIỀN GIANG</a></li>
+                        <li><a href="#">Siêu thị ĐỒNG NAI</a></li>
+                        <li><a href="#">Nhà sách NGUYỄN TẤT THÀNH chi nhánh QUẬN 4</a></li>
+                        <li><a href="#">Nhà sách NGUYỄN VĂN CỪ chi nhánh HÀ NỘI</a></li>
+                    </ul>
+                </div>
+
+                <div id="right">
+                    <div id="book">
+                        <div>
+                            <img src="book1.png" alt="Book 1">  
+                        </div>
+                     
+                        <div>
+                            <p>SÁCH BỘ GIÁO KHOA LỚP 10 Tác giả: Bộ Giáo Dục & Đào Tạo Định dạng: Giáo Dục Việt Nam Năm xuất bản: 2014 Lượt xem: 1.793 Giá bìa: 132.600đ Giá bán: 132.600đ</p>
+                        </div>
+                    </div>
+
+                    <div id="book">
+                        <div>
+                            <img src="book2.png" alt="Book 2">  
+                        </div>
+                     
+                        <div>
+                            <p>Hướng dẫn chăm sóc BỂ CÁ Tác giả: Trí Tuệ Nhà xuất bản: Thanh Niên Số trang: 102 Lượt xem: 2.086 Giá bìa: 30.000đ Giá bán: 30.000đ</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+        
+
+        <footer>
+            Bản quyền CNTT_HAUI.com
+        </footer>
+    </body>
+</html>

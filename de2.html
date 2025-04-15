@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Đề 2</title>
+        <meta charset="utf-8">
+        <style>
+            *{
+                padding: 0px;
+                margin: 0px;
+                box-sizing: border-box;
+            }
+
+            header{    
+                padding: 0px;
+                width: 1320px;
+                height: 100px;
+            }
+
+            header>img {
+                width: 1320px;
+                height: 100px;
+            }
+
+            nav {
+                height: 50px;
+                background-color: #00A69B;
+                width: 100%;
+            }
+
+            nav>ul {
+                display: grid;
+                grid-template-columns: auto auto auto auto auto auto auto auto;
+                list-style-type: none;
+                width: 100%;
+            }
+
+            nav>ul>li {
+                width: 100%;
+            }
+
+            nav>ul>li>a {
+                text-decoration: none;
+                line-height: 50px;
+                color: red;
+                border-left: 1px solid blue;
+                display: inline-block;
+                width: 100%;
+                text-align: center;
+            }
+
+            nav>ul>li>a:hover {
+                background-color: #5F5C5C;
+            }
+
+            .cha {
+                position: relative;
+            }
+
+            .con {
+                position: absolute;
+                width: 200px;
+                background-color: #00A69B;
+                list-style-position: inside;
+                display: none;
+            }
+
+            .cha:hover .con {
+                display: block;
+            }
+
+            .con>li {
+                padding-left: 10px;
+            }
+
+            .con>li>a {
+                text-decoration: none;
+                color: black;
+                line-height: 30px;
+            }
+
+            section {
+                display: grid;
+                grid-template-columns: 30% 50%;
+                margin-top: 10px;
+            }
+
+            #left {
+                padding-left: 50px;
+                margin-top: 50px;
+            }
+
+            #left>ul {
+                list-style-position: inside;
+                margin-left: 20px;
+            }
+
+            #left>ul>li>a {
+               text-decoration: none;
+               color: #004080;
+               line-height: 30px;
+            }
+
+            #right {
+                display: flex;
+                grid-template-columns:auto auto;
+                grid-template-columns:auto auto;
+            }
+
+            #anh {
+                display: flex;
+                flex-direction: column;
+                width: 250px;
+                height: 200px;
+            }
+
+            #chu {
+                text-align: justify;
+                color: #004080;
+                padding: 0 10px;
+            }
+           
+            #chu h3 {
+                margin-bottom: 10px;
+                color: #004080;
+                margin-top: 10px;
+            }
+
+            footer {
+                height: 50px;
+                background-color: black;
+                line-height: 50px;
+                text-align: center;
+                color: #004080;
+                font-weight: bold;
+                margin-top: 164px;
+            }
+
+        </style>
+    </head>
+
+    <body>
+        <header>
+            <img src="Banner.png" alt="Banner">
+        </header>
+
+        <nav>
+            <ul>
+                <li><a href="#">Trang chủ</a></li>
+                <li><a href="#">Đồ gia dụng</a></li>
+                <li class="cha"><a href="#">Điện lạnh</a>
+                    <ul class="con">
+                        <li><a href="#">Sản phẩm điện lanh</a></li>
+                        <li><a href="#">Tủ lạnh theo hãng</a></li>
+                        <li><a href="#">Máy giặt theo hãng</a></li>
+                        <li><a href="#">Điều hòa theo hãng</a></li>
+                    </ul>
+                </li>
+                <li><a href="#">Điện tử - Âm thanh</a></li>
+                <li><a href="#">Điện thoại</a></li>
+                <li><a href="#">Laptop</a></li>
+                <li><a href="#">Máy tính - Linh kiện</a></li>
+                <li><a href="#">Hóa đơn mua hàng</a></li>
+            </ul>
+        </nav>
+
+        <section>
+            <div id="left">
+                <h2>Siêu thị tại HÀ NỘI</h2>
+                <ul>
+                    <li><a href="#">Trần Anh - Cầu Giấy</a></li>
+                    <li><a href="#">Trần Anh - Long Biên</a></li>
+                    <li><a href="#">Trần Anh - Hai Bà Trưng</a></li>
+                    <li><a href="#">Trần Anh - Hà Đông</a></li>
+                    <li><a href="#">Trần Anh - Đống Đa</a></li>
+                    <li><a href="#">Trần Anh - Hoàng Mai</a></li>
+                    <li><a href="#">Trần Anh - Nam Từ Liêm</a></li>
+                    <li><a href="#">Trần Anh - AEON Mall</a></li>
+                    <li><a href="#">Trần Anh - Đông Anh</a></li>
+                </ul>
+            </div>
+
+            <div id="right">
+                <div id="anh">
+                    <img id="anh1" src="Anh1.png" alt="Ảnh 1">  
+                    <img id="anh2" src="Anh2.png" alt="Ảnh 2">                     
+                </div>
+
+                <div id="chu">
+                    <h3>Đèn sưởi phòng tắm Sunhouse SHD3803</h3>
+                    <p id="chu1">Sáng 8/4, tại bến Bạch Đằng, 15 khẩu pháo lễ đã khai hỏa tập luyện, chuẩn bị cho Lễ kỷ niệm 50 năm Ngày Giải phóng miền Nam, thống nhất đất nước. Sự kiện này thu hút đông đảo người dân TPHCM. Mỗi khẩu pháo nặng khoảng 4 tấn, được đưa từ Đồng Nai đến TPHCM. Mỗi khẩu pháo 105mm cần 6 chiến sĩ phối hợp di chuyển. Những ngày này, không khí tại khu vực bến Bạch Đằng trở nên náo nhiệt khi người dân và du khách quốc tế đổ về chiêm ngưỡng, chụp hình cùng dàn pháo lễ.</p>      
+                    <h3>Đèn sưởi phòng tắm Sunhouse SHD3803</h3>
+                    <p id="chu1">Sáng 8/4, tại bến Bạch Đằng, 15 khẩu pháo lễ đã khai hỏa tập luyện, chuẩn bị cho Lễ kỷ niệm 50 năm Ngày Giải phóng miền Nam, thống nhất đất nước. Sự kiện này thu hút đông đảo người dân TPHCM. Mỗi khẩu pháo nặng khoảng 4 tấn, được đưa từ Đồng Nai đến TPHCM. Mỗi khẩu pháo 105mm cần 6 chiến sĩ phối hợp di chuyển. Những ngày này, không khí tại khu vực bến Bạch Đằng trở nên náo nhiệt khi người dân và du khách quốc tế đổ về chiêm ngưỡng, chụp hình cùng dàn pháo lễ.</p>                </div>
+                      
+                </div>
+            </div>
+        </section>
+
+        <footer>
+            Bản quyền CNTT_HAUI.com
+        </footer>
+    </body>
+</html>

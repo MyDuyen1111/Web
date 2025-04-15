@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Đề mẫu</title>
+        <meta charset="utf-8">
+        <style>
+            *{
+                padding: 0px;
+                margin: 0px;
+                box-sizing: border-box;
+            }
+
+            header {
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                padding: 10px 30px;               
+            }
+
+            .header-left {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                margin-right: 20px;
+            }
+
+            .header-left>img {
+                height: 80px;
+                width: auto;
+            }
+
+            .header-left>p {
+                margin-top: -5px;
+                font-size: 8px;
+            }
+
+            .header-center {
+                text-align: center;
+                flex-grow: 1;
+            }
+
+            .header-right>input {
+                padding: 8px 12px;
+                font-size: 14px;
+                border: 1px solid #ccc;
+                border-radius: 999px;
+            }
+
+            nav {
+                height: 40px;
+                background-color: #C0C0C0;
+                width: 100%;
+            }
+
+            nav>ul {
+                display: grid;
+                grid-template-columns: auto auto auto auto auto auto auto auto auto;
+                list-style-type: none;
+                width: 100%;
+            }
+
+            nav>ul>li {
+                width: 100%;
+            }
+
+            nav>ul>li>a {
+                text-decoration: none;
+                line-height: 40px;
+                color: black;
+                border-left: 1px solid black;
+                display: inline-block;
+                width: 100%;
+                text-align: center;
+            }
+
+            nav>ul>li>a:hover {
+                background-color: black;
+                color: white;
+            }
+
+            .cha {
+                position: relative;
+            }
+
+            .con {
+                position: absolute;
+                width: 200px;
+                background-color: #C0C0C0;
+                list-style-position: inside;
+                display: none;
+            }
+
+            .cha:hover .con {
+                display: block;
+            }
+
+            .con>li {
+                padding-left: 10px;
+            }
+
+            .con>li>a {
+                text-decoration: none;
+                color: black;
+                line-height: 30px;
+            }
+
+            .banner {
+                position: relative;
+                width: 100%;
+                height: 220px;
+                overflow: hidden;
+            }
+
+            .banner img {
+                width: 100%;
+                height: 220px;
+                display: block;
+            }
+
+            .banner .overlay {
+                position: absolute;
+                bottom: 20px;
+                right: 40px;
+                background: rgba(0, 0, 0, 0.5);
+                color: white;
+                padding: 20px;
+                max-width: 400px;
+            }
+
+            .banner .overlay>p {
+                font-size: 12px;
+            }
+
+
+            .content {
+                display: flex;
+                justify-content: space-around;
+                padding: 40px 20px;
+                gap: 20px;
+            }
+
+            .box {
+                flex: 1;
+                text-align: justify;
+            }
+
+            .box img {
+                width: 100%;
+                height: 220px;
+            }
+
+            button {
+                display: block;
+                margin-top: 10px;
+                margin-left: auto;
+                padding: 10px 20px;
+                background: white;
+                border: 1px solid #aaa;
+                cursor: pointer;
+            }
+
+            footer {
+                height: 50px;
+                background-color: black;
+                line-height: 50px;
+                text-align: center;
+                color: white;
+                font-weight: bold;
+                margin-top: 80px;
+            }
+        </style>
+    </head>
+
+    <body>
+        <header>
+            <div class="header-left">
+                <img src="logo.png" alt="logo">
+                <p>Nông Nghiệp Bền Vững</p>
+            </div>
+
+            <div class="header-center">
+                <h2>CÔNG TY TRÁCH NHIỆM HỮU HẠN HIỆP THÀNH</h2>
+                <p>HIEP THANH COMPANY LIMITED</p>
+            </div>
+
+            <div header-right>
+                <input type="text" placeholder="Từ khoá tìm kiếm">
+            </div>
+        </header>
+
+        <nav>
+            <ul>
+                <li><a href="#">TRANG CHỦ</a></li>
+                <li><a href="#">GIỚI THIỆU</a></li>
+                <li class="cha"><a href="#">SẢN PHẨM</a>
+                    <ul class="con">
+                        <li><a href="#">Gạo nếp nương</a></li>
+                        <li><a href="#">Gạo tám ĐB</a></li>
+                        <li><a href="#">Gạo bắc hương</a></li>
+                        <li><a href="#">Rau sạch Việt</a></li>
+                        <li><a href="#">Gạo séng cù</a></li>
+                    </ul>
+                </li>
+                <li><a href="#">DỊCH VỤ</a></li>
+                <li><a href="#">DỰ ÁN</a></li>
+                <li><a href="#">TIN TỨC - SỰ KIỆN</a></li>
+                <li><a href="#">ALBUM ẢNH</a></li>
+                <li><a href="#">TUYỂN DỤNG</a></li>
+                <li><a href="#">LIÊN HỆ</a></li>
+            </ul>
+        </nav>
+
+        <section>
+            <div class="banner">
+                <img src="banner.png" alt="banner">
+                <div class="overlay">
+                    <h3>NÔNG NGHIỆP BỀN VỮNG</h3>
+                    <p>HTC – Kinh doanh nông nghiệp bền vững, hướng tới bảo vệ môi trường.</p>
+                </div>
+            </div>
+
+            <div class="content">
+                <div class="box">
+                    <h3>GIỚI THIỆU CHUNG</h3>
+                    <img src="gioithieu.png" alt="Giới thiệu">
+                    <p>Hiệp Thành hướng tới là công ty số 1 Việt Nam về sản phẩm chè vùng cao và sản phẩm hữu cơ như chè, cà phê, gia vị, thảo dược,...</p>
+                    <button>TÌM HIỂU THÊM</button>
+                </div>
+                
+                <div class="box">
+                    <h3>DỰ ÁN ĐẦU TƯ</h3>
+                    <img src="duan.png" alt="Dự án">
+                    <p>Hệ sinh thái kinh doanh phát triển bền vững, có thương hiệu vững chắc, được quản lý ở trình độ chuyên nghiệp cao nhất.</p>
+                    <button>TÌM HIỂU THÊM</button>
+                </div>
+
+                <div class="box">
+                    <h3>SẢN PHẨM CHÍNH</h3>
+                    <img src="sanpham.png" alt="Sản phẩm">
+                    <p>Hiệp Thành đầu tư vào chuỗi sản xuất trà, gia vị, cà phê, thảo dược, thực phẩm hữu cơ - bắt đầu từ vùng nguyên liệu sạch và an toàn</p>
+                    <button>TÌM HIỂU THÊM</button>
+                </div>
+            </div>
+        </section>
+
+        <footer>
+            Bản quyền thuộc về HTC - Thiết kế web bởi Tất Thành
+        </footer>
+    </body>
+</html>
