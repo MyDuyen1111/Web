@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Kiểm tra thông tin</title>
+    <meta charset="UTF-8">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            text-align: center;
+        }
+        h1 {
+            color: #333;
+        }
+        .container {
+            background-color: #ffffff;
+            border: 2px solid #007BFF;
+            border-radius: 10px;
+            padding: 20px;
+            display: inline-block;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        .input-group {
+            display: flex; /* Sử dụng flexbox để căn chỉnh */
+            justify-content: flex-start; /* Căn lề trái */
+            align-items: center; /* Căn giữa theo chiều dọc */
+            margin: 10px 0; /* Khoảng cách giữa các nhóm input */
+        }
+        label {
+            margin-right: 10px; /* Khoảng cách giữa label và input */
+            width: 100px; /* Đặt chiều rộng cho label */
+            text-align: right; /* Căn lề phải cho label */
+        }
+        input[type="text"], input[type="password"] {
+            width: 200px;
+            padding: 10px;
+            border: 2px solid #007BFF;
+            border-radius: 5px;
+        }
+        button {
+            padding: 10px 15px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+        button:hover {
+            background-color: #45a049;
+        }
+        .message {
+            margin-top: 10px;
+            color: red; /* Màu chữ mặc định là đỏ */
+        }
+        .success {
+            color: green; /* Màu xanh cho thông báo thành công */
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h1>Kiểm tra thông tin</h1>
+        <div class="input-group">
+            <label for="username">Username:</label>
+            <input type="text" id="username">
+        </div>
+        <div class="input-group">
+            <label for="password">Password:</label>
+            <input type="password" id="password">
+        </div>
+        
+        <button onclick="checkInput()">Kiểm tra password</button>
+        <div class="message" id="message"></div>
+    </div>
+
+    <script>
+        function checkInput() {
+            const username = document.getElementById('username').value;
+            const password = document.getElementById('password').value;
+            const message = document.getElementById('message');
+
+            message.className = 'message'; // Đặt lại class mặc định
+
+            if (!username) {
+                message.innerText = "Username không được để trống.";
+            } else if (password.length < 8) {
+                message.innerText = "Password phải có ít nhất 8 ký tự.";
+            } else if (!/[A-Z]/.test(password)) {
+                message.innerText = "Password phải có ít nhất 1 ký tự in hoa.";
+            } else if (/^\d/.test(password)) {
+                message.innerText = "Password không được bắt đầu bằng ký tự số.";
+            } else {
+                message.classList.add('success'); // Thêm class thành công
+                message.innerText = "Bạn nhập đúng.";
+            }
+        }
+    </script>
+</body>
+</html>

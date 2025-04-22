@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <title>SẮP CÂU THEO QUY LUẬT</title>
+  <style>
+    body {
+      font-family: Arial;
+      background-color: #e0f7fa;
+    }
+    .container {
+      width: 400px;
+      margin: 50px auto;
+      padding: 15px;
+      border: 2px solid #333;
+      background-color: #b3e5fc;
+    }
+    .container h2 {
+      text-align: center;
+    }
+    .form-group {
+      display: flex;
+      align-items: center; /* Căn giữa theo chiều dọc */
+      margin-bottom: 10px;
+    }
+    label {
+      width: 150px; /* Chiều rộng cố định cho label */
+      text-align: left;
+      margin-right: 10px; /* Khoảng cách giữa label và input */
+    }
+    input[type="text"] {
+      flex: 1; /* Input chiếm không gian còn lại */
+      padding: 5px;
+      box-sizing: border-box;
+    }
+    .buttons {
+      display: flex;
+      justify-content: center;
+      gap: 10px;
+      margin-top: 10px;
+    }
+    button {
+      padding: 5px 15px;
+      font-size: 16px;
+    }
+  </style>
+</head>
+<body>
+
+<div class="container">
+  <h2>SẮP CÂU THEO QUY LUẬT</h2>
+
+  <div class="form-group">
+    <label for="inputSentence">Nhập câu ban đầu:</label>
+    <input type="text" id="inputSentence" placeholder="Nhập câu không quá 20 từ">
+  </div>
+
+  <div class="form-group">
+    <label for="outputSentence">Câu sau khi sắp lại:</label>
+    <input type="text" id="outputSentence" readonly>
+  </div>
+
+  <div class="buttons">
+    <button onclick="clearFields()">Xóa</button>
+    <button onclick="sortSentence()">Viết lại</button>
+  </div>
+</div>
+
+<script>
+  function sortSentence() {
+    const input = document.getElementById("inputSentence").value.trim();
+    let words = input.split(/\s+/).filter(word => word.length > 0);
+
+    if (words.length > 20) {
+      alert("Không được nhập quá 20 từ.");
+      return;
+    }
+
+    for (let word of words) {
+      if (word.length > 10) {
+        alert("Mỗi từ không được vượt quá 10 ký tự: " + word);
+        return;
+      }
+    }
+
+    words.sort((a, b) => a.localeCompare(b));
+    document.getElementById("outputSentence").value = words.join(" ");
+  }
+
+  function clearFields() {
+    document.getElementById("inputSentence").value = "";
+    document.getElementById("outputSentence").value = "";
+  }
+</script>
+
+</body>
+</html>
