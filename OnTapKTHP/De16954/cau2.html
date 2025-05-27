@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Đề 16954 Câu 2</title>
+        <style>
+            body {
+                text-align: center;
+            }
+            .container {
+                border: 1px solid black;
+                justify-content: center;
+                align-items: center;
+                padding: 20px;
+                display: inline-block;
+            }
+            .input {
+                display: flex;
+                margin: 20px;
+                gap: 86px;
+            }
+            .output {
+                display: flex;
+                margin: 20px;
+                gap: 20px;
+            }
+            .button {
+                display: flex;
+                margin: 20px;
+                gap: 30px;
+                justify-content: center;
+                align-items: center;
+            }
+            .input>input, .output>input {
+                width: 250px;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="container">
+            <h3>SẮP XẾP MẢNG</h3>
+            <div class="input">
+                <label for="mang">Nhập mảng:</label>
+                <input type="text" id="mang">
+            </div>
+            
+            <div class="output">
+                <label for="ketqua">Mảng sau khi sắp xếp:</label>
+                <input type="text" id="ketqua">
+            </div>
+
+            <div class="button">
+                <button onclick="Huy()">Huỷ</button>
+                <button onclick="Sapxep()">Sắp xếp</button>
+            </div>
+        </div>
+
+        <script>
+            function Sapxep() {
+                const input = document.getElementById("mang").value.trim();
+
+                let arr = input.split(",").map(Number);
+                if (arr.some(isNaN)) {
+                    alert("Mảng chỉ được chứa số nguyên, cách nhau bởi dấu phẩy.");
+                    return;
+                }
+                
+                let chan = arr.filter(x => x !== 0 && x % 2 === 0);
+                let zero = arr.filter(x => x === 0);
+                let le = arr.filter(x => x % 2 !== 0);
+
+                let result = chan.concat(zero, le);
+
+                document.getElementById("ketqua").value = result.join(",");
+            }
+            
+            function Huy() {
+                document.getElementById("mang").value = "";
+                document.getElementById("ketquan").value = "";
+            }
+        </script>
+    </body>
+</html>

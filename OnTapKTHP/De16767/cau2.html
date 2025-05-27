@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Đề 16767 Câu 2</title>
+        <style>
+            body {
+                text-align: center;
+            }
+            .container {
+                border: 1px solid black;
+                padding: 20px;
+                display: inline-block;
+            } 
+            .input-group {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                margin: 20px;
+                gap: 20px;
+            }
+            .input-group>input {
+                width: 200px;
+            }
+            .message {
+                margin-top: 20px;
+                color: red;
+            }
+            .success {
+                color: green;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="container">
+            <div class="input-group">
+                <label for="username">Username</label>
+                <input type="text" id="username">
+            </div>
+
+            <div class="input-group">
+                <label for="password">Password</label>
+                <input type="text" id="password">
+            </div>
+
+            <button onclick="Check()">Kiểm tra password</button>
+            <div class="message" id="message"></div>
+        </div>
+
+        <script>
+            function Check() {
+                const username = document.getElementById("username").value;
+                const password = document.getElementById("password").value;
+                const message = document.getElementById("message");
+
+                message.className = 'message';
+                
+                if (!username) {
+                    message.innerText = "Username không được để trống.";
+                }else if (!password) {
+                    message.innerText = "Password không được để trống.";
+                }else if (password.length < 8) {
+                    message.innerText = "Password phải có ít nhất 8 ký tự.";
+                }else if (!/[A-Z]/.test(password)) {
+                    message.innerText = "Password phải có ít nhất 1 ký tự in hoa."
+                }else if (/^\d/.test(password)) {
+                    message.innerText = "Password không được bắt đầu bằng ký tự số."
+                }else {
+                    message.classList.add("success");
+                    message.innerText = "Bạn nhập đúng.";
+                }            
+            }
+        </script>
+    </body>
+</html>

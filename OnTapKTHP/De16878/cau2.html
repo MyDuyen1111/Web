@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Đề 16878 Câu 2</title>
+        <style>
+            body {
+                text-align: center;
+            }
+            .container {
+                display: inline-block;
+                border: 1px solid black;
+                padding: 20px;
+            }
+            .input-top {
+                display: flex;
+                gap: 45px;
+                margin: 20px;
+            }
+            .input-bottom {
+                display: flex;
+                gap: 55px;
+                margin: 20px;
+            }
+            .output {
+                display: flex;
+                gap: 15px;
+                margin: 20px;
+            }
+            .button {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                gap: 30px;
+                margin: 20px;
+            }
+        </style>
+    </head>
+
+    <body>
+        <div class="container">
+            <div class="input-top">
+                <label for="so1">Nhập số thứ nhất:</label>
+                <input type="text" id="so1">
+            </div>
+            <div class="input-bottom">
+                <label for="so2">Nhập số thứ hai:</label>
+                <input type="text" id="so2">
+            </div>
+            <div class="output">
+                <label for="ucln">UCLN của 2 số trên là:</label>
+                <input type="text" id="ucln">
+            </div>
+            <div class="button">
+                <button onclick="Tim()">Tìm</button>
+                <button onclick="Huy()">Huỷ bỏ</button>
+            </div>
+        </div>
+
+        <script>
+            function Tim() {
+                const a = parseInt(document.getElementById("so1").value);
+                const b = parseInt(document.getElementById("so2").value);
+                if (isNaN(a) || isNaN(b) || a <= 0 || b <= 0) {
+                    alert("Vui lòng nhập số nguyên dương hợp lệ!");
+                    return;
+                }
+
+                let x = a, y = b;
+                while (y !== 0) {
+                    let temp = y;
+                    y = x % y;
+                    x = temp;
+                }
+
+                document.getElementById("ucln").value = x;
+            }
+
+            function Huy() {
+                document.getElementById("so1").value = "";
+                document.getElementById("so2").value = "";
+                document.getElementById("ucln").value = "";
+            }
+        </script>
+    </body>
+</html>

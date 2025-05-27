@@ -1,0 +1,191 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    height: 70px;
+}
+
+.head-left {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    background-color: black;
+    width: 25%;
+    height: 100%;
+}
+
+.logo>img {
+    height: 40px;
+    width: auto;
+    margin-right: 20px;
+    margin-left: 10px;
+}
+
+.search {
+    height: 40px;
+    border: none;
+    margin-right: 10px;
+}
+
+.search>input {
+    height: 100%;
+    padding: 15px;
+}
+
+.head-right {
+    display: flex;
+    background-color: yellow;
+    width: 75%;
+    height: 100%;
+}
+
+.icon {
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+}
+
+.icon>img {
+    height: 40px;
+    width: 40px;
+}
+
+.icon>a {
+    text-decoration: none;
+    color: black;
+}
+
+.icon:hover{
+    background-color: white;
+}
+
+.icon>a:hover {
+    color: red;
+}
+
+.main {
+    display: flex;
+    margin-top: 10px;
+}
+
+nav {
+    width: 210px;
+    margin-left: 10px;
+}
+
+nav>ul {
+    display: grid;
+    grid-template-rows: auto auto auto auto auto auto auto auto;
+    list-style-type: none;
+    width: 210px;
+}
+
+nav>ul>li {
+    background-color: #CCCCCC;
+    border: 1px dotted;
+    padding-left: 15px;
+    height: 35px;
+    justify-content: center;
+}
+
+nav>ul>li>a {
+    text-decoration: none;
+    line-height: 35px;
+    color: black;
+}
+
+nav>ul>li>a:hover {
+    color: #FFFF33;
+}
+
+.cha {
+    position: relative;
+}
+
+.con {
+    position: absolute;
+    display: none;
+    list-style-type: none;
+    width: 210px;
+    left: 209px;
+    top: 0px;
+}
+
+.cha:hover .con {
+    display: block;
+}
+
+.con>li {
+    border: 1px dotted;
+    padding-left: 15px;
+    height: 35px;
+}
+
+.con>li>a {
+    text-decoration: none;
+    line-height: 35px;
+    color: black;
+}
+
+section {
+    border: 2px solid black;
+    margin-left: 220px;
+    margin-right: 10px;
+}
+
+.head {
+    display: flex;
+    justify-content: space-between;
+    height: 30px;
+    background-color: #CCCCCC;
+    align-items: center;
+    padding: 20px;
+}
+
+.content {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+.item {
+    display: flex;
+    flex-direction: column;
+    width: 200px;
+    margin: 10px 5px;
+    text-align: justify;
+}
+
+.img>img{
+    width: 100%;
+    height: auto;
+}
+
+.img>img:hover {
+    transform: scale(1.2);
+    border: 1px solid black;
+}
+
+.item>a {
+    text-decoration: none;
+    color: black;
+    
+}
+
+.item>a:hover {
+    color: red;
+}
+
+.giamgia {
+    display: flex; 
+    gap: 5px;
+}

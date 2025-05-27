@@ -1,0 +1,244 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+header {
+    display: block;
+}
+
+header .top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: white;
+    padding: 5px 10px;
+}
+
+.left>img {
+    height: 50px;
+    width: auto;
+    align-items: center;
+}
+
+.right {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 10px;
+}
+
+.imgCart>img{
+    height: 40px;
+    width: auto;
+}
+
+header .bottom {
+    height: 50px;
+    width: auto;
+    background-color: #FF3399;
+    display: flex;
+    justify-content: space-between;
+}
+
+header .bottom>ul {
+    display: grid;
+    grid-template-columns: auto auto auto auto auto auto;
+    list-style-type: none;
+    width: 100%;
+}
+
+header .bottom>ul>li {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+header .bottom>ul>li>a {
+    text-decoration: none;
+    color: white;
+    display: inline-block;
+    text-align: center;
+}
+
+header .bottom>ul>li:hover {
+    background-color: #FFCCFF;
+}
+
+.search {
+    display: flex;
+    height: 30px;
+    margin: 10px;
+}
+
+.search>input {
+    width: 280px;
+    padding: 10px;
+}
+
+.search>select {
+    width: 120px;
+}
+
+.main {
+    display: flex;
+    margin-top: 10px;
+}
+
+nav {
+    margin-left: 10px;
+}
+
+nav>ul {
+    display: grid;
+    grid-template-rows: auto auto auto auto;
+    list-style-type: none;
+    width: 180px;
+}
+
+nav>ul>li {
+    border: 1px solid #999999;
+    height: 35px;
+    padding-left: 10px;
+}
+
+nav>ul>li>a {
+    text-decoration: none;
+    line-height: 35px;
+    color: black;
+}
+
+nav>ul>li:hover {
+    background-color: #999999;
+}
+
+.cha {
+    position: relative;
+}
+
+.con {
+    position: absolute;
+    display: none;
+    list-style-type: none;
+    top: 0px;
+    left: 179px;
+    width: 180px;
+}
+
+.cha:hover .con {
+    display: block;
+}
+
+.con>li {
+    border: 1px solid #999999;
+    height: 35px;
+    padding-left: 10px;
+}
+
+.con>li>a {
+    text-decoration: none;
+    line-height: 35px;
+    color: black;
+}
+
+section {
+    border: 2px solid #999999;
+    margin-left: 190px;
+    margin-right: 10px;
+}
+
+section .head {
+    display: flex;
+    justify-content: space-between;
+    height: 30px;
+    padding: 20px;
+    border-bottom: 1px solid #999999;
+    align-items: center;
+}
+
+section .head .button {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+section .head .button>button {
+    width: 10px;
+    height: 10px;
+    padding: 10px; 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.top {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+.item-top {
+    display: flex;
+    flex-direction: row;
+    text-align: justify;
+    margin: 10px 5px;
+    gap: 15px;
+}
+
+.item-top .img>img {
+    width: 200px;
+    height: auto;
+}
+
+.item-top .mota {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.gia {
+    display: flex;
+    gap: 5px;
+}
+
+.add>a{
+    background-color: gray;
+    text-decoration: none;
+    color: black;
+    padding: 3px;
+}
+
+.add>a:hover {
+    color: white;
+    background-color: #FF33CC;
+}
+
+.bottom {
+    display: flex;
+    justify-content: space-around;
+}
+
+.item-bottom {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 10px;
+    gap: 15px;
+    border-radius: 10px;
+    height: 100px;
+    width: 300px;
+}
+
+.icon>img {
+    width: 40px;
+    height: auto;
+}
+
+.item-bottom.mota {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+

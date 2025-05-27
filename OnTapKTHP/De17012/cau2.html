@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Tìm từ dài nhất</title>
+  <style>
+    body {
+      text-align: center;
+    }
+    .container {
+      display: inline-block;
+      padding: 20px;
+      background-color: #b3e0f2;
+      border: 2px solid #666;
+    }
+    .title {
+      font-weight: bold;
+      font-size: 20px;
+      margin-bottom: 10px;
+    }
+    .row {
+      margin: 10px;
+    }
+    label {
+      font-weight: bold;
+    }
+    input[type="text"] {
+      width: 300px;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="title">Tìm từ dài nhất</div>
+    <div class="row">
+      <label>Nhập xâu:</label>
+      <input type="text" id="inputText">
+    </div>
+    <div class="row">
+      <label>Thông báo kết quả:</label>
+      <input type="text" id="resultText" readonly>
+    </div>
+    <div class="row">
+      <button onclick="tim()">Tìm kiếm</button>
+      <button onclick="xoa()">Xóa</button>
+    </div>
+  </div>
+
+  <script>
+    function tim() {
+      const input = document.getElementById("inputText").value.trim();
+
+      if (input.length === 0) {
+        alert("Vui lòng nhập xâu!");
+        return;
+      }
+
+      const words = input.split(/\s+/); 
+      let maxLength = 0;
+      let longestWord = "";
+      let index = -1;
+
+      for (let i = 0; i < words.length; i++) {
+        if (words[i].length > maxLength) {
+          maxLength = words[i].length;
+          longestWord = words[i];
+          index = i;
+        }
+      }
+
+      document.getElementById("resultText").value = `Từ dài nhất: "${longestWord}" tại vị trí ${index}`;
+    }
+
+    function xoa() {
+      document.getElementById("inputText").value = "";
+      document.getElementById("resultText").value = "";
+    }
+  </script>
+</body>
+</html>

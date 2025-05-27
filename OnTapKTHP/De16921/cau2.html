@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Đề 16921 Câu 2</title>
+        <style>
+            body {
+                text-align: center;
+            }
+            .container {
+                display: inline-block;
+                justify-content: center;
+                align-items: center;
+                padding: 20px;
+                border: 1px solid black;
+            }
+            .input-group {
+                display: flex;
+                margin: 20px;
+                gap: 40px;
+            }
+            .left, .right {
+                display: flex;
+                gap: 33px;
+            }
+            .output-group {
+                display: flex;
+                margin: 20px;
+                gap: 20px;
+            }
+            .button {
+                display: flex;
+                margin: 20px;
+                gap: 30px;
+                justify-content: center;
+                align-items: center;
+            }
+        </style>
+    </head>
+
+    <body>
+        <div class="container">
+            <div class="input-group">
+                <div class="left">
+                    <label for="thang">Tháng:</label>
+                    <input type="text" id="thang">
+                </div>
+                <div class="right">
+                    <label for="nam">Năm:</label>
+                    <input type="text" id="nam">
+                </div>
+            </div>
+            <div class="output-group">
+                <label for="ngay">Số ngày:</label>
+                    <input type="text" id="ngay">
+            </div>
+            <div class="button">
+                <button onclick="Huy()">Huỷ</button>
+                <button onclick="Hien()">Hiển thị</button>
+            </div>
+        </div>
+
+        <script>
+            function Hien() {
+                const Thang = parseInt(document.getElementById("thang").value);
+                const Nam = parseInt(document.getElementById("nam").value);
+
+                if (Thang < 1 || Thang > 12 || Nam < 1) {
+                    alert("Vui lòng nhập dữ liệu hợp lệ!");
+                    return;
+                }
+
+                let Ngay = 0;
+
+                if (Thang === 1 || Thang === 3 || Thang === 5 || Thang === 7 || Thang === 8 || Thang === 10 || Thang === 12) {
+                    Ngay = 31; 
+                } else if (Thang === 4 || Thang === 6 || Thang === 9 || Thang === 11) {
+                    Ngay = 30;
+                } else {
+                    if (Nam % 4 === 0) {
+                        Ngay = 29;
+                    } else {
+                        Ngay = 28;
+                    }
+                }
+
+                document.getElementById("ngay").value = Ngay;
+            }
+
+            function Huy() {
+                document.getElementById("thang").value = "";
+                document.getElementById("nam").value = "";
+                document.getElementById("ngay").value = "";
+            }
+        </script>
+    </body>
+</html>

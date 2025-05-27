@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Câu 2</title>
+        <style>
+            body {
+                text-align: center;
+            }
+            .container {
+                display: inline-block;
+                border: 1px solid black;
+                padding: 20px;
+                justify-content: center;
+                align-items: center;
+            }
+            .input-first {
+                display: flex;
+                gap: 60px;
+                margin: 20px;
+            }
+            .input-second {
+                display: flex;
+                gap: 60px;
+                margin: 20px;
+            }
+            .output-first {
+                display: flex;
+                gap: 25px;
+                margin: 20px;
+            }
+            .output-second {
+                display: flex;
+                gap: 80px;
+                margin: 20px;
+            }
+            .output-thirth {
+                display: flex;
+                gap: 23px;
+                margin: 20px;
+            }
+            .button {
+                display: flex;
+                gap: 30px;
+                margin: 20px;
+                justify-content: center;
+                align-items: center;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="container">
+            <h3>KẾT QUẢ HỌC TẬP</h3>
+            <div class="input-first">
+                <label for="hk1">Điểm HK1:</label>
+                <input type="text" id="hk1">
+            </div>
+            <div class="input-second">
+                <label for="hk2">Điểm HK2:</label>
+                <input type="text" id="hk2">
+            </div>
+            <div class="output-first">
+                <label for="trungbinh">Điểm trung bình:</label>
+                <input type="text" id="trungbinh">
+            </div>
+            <div class="output-second">
+                <label for="ketqua">Kết quả:</label>
+                <input type="text" id="ketqua">
+            </div>
+            <div class="output-thirth">
+                <label for="xeploai">Xếp loại học lực:</label>
+                <input type="text" id="xeploai">
+            </div>
+            <div class="button">
+                <button onclick="Huy()">Huỷ</button>
+                <button onclick="Xem()">Xem kết quả</button>
+            </div>
+        </div>
+
+        <script>
+            function Xem() {
+                const diemhk1 = parseFloat(document.getElementById("hk1").value);
+                const diemhk2 = parseFloat(document.getElementById("hk2").value);
+
+                const tbinh = ((diemhk1 + diemhk2 * 2) / 3).toFixed(2);
+                document.getElementById("trungbinh").value = tbinh;
+
+                if (tbinh >= 5) {
+                    document.getElementById("ketqua").value = "Được lên lớp";
+                }else {
+                    document.getElementById("ketqua").value = "Ở lại lớp";
+                }
+
+                if (tbinh >= 8) {
+                    document.getElementById("xeploai").value = "Giỏi";
+                }else if (tbinh >= 6.5 && tbinh < 8) {
+                    document.getElementById("xeploai").value = "Khá";
+                } else if (tbinh >= 5 && tbinh < 6.5) {
+                    document.getElementById("xeploai").value = "Trung bình";
+                } else {
+                    document.getElementById("xeploai").value = "Yếu";
+                }           
+            }   
+            function Huy() {
+                document.getElementById("hk1").value = "";
+                document.getElementById("hk2").value = "";
+                document.getElementById("trungbinh").value = "";
+                document.getElementById("ketqua").value = "";
+                document.getElementById("xeploai").value = "";
+            }        
+        </script>
+    </body>
+</html>

@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Đề 16899 Câu 2</title>
+        <style>
+            body {
+                text-align: center;
+            }
+            .container {
+                display: inline-block;
+                padding: 20px;
+                border: 1px solid black;
+            }
+            .input {
+                display: flex;
+                margin: 20px;
+                gap: 20px;
+            }
+            .output {
+                display: flex;
+                margin: 20px;
+                gap: 57px;
+            }
+            .input>input, .output>input {
+                width: 300px;
+            }
+        </style>
+    </head>
+
+    <body>
+        <div class="container">
+            <div class="input">
+                <label for="hoten">Họ và tên:</label>
+                <input type="text" id="hoten">
+            </div>
+            <div class="output">
+                <label for="ten">Tên:</label>
+                <input type="text" id="ten">
+            </div>
+            <div class="button">
+                <button onclick="Hien()">Hiển thị</button>
+                <button onclick="Huy()">Huỷ bỏ</button>
+            </div>
+        </div>
+        <script>
+            function Hien() {
+                const hoTen = document.getElementById("hoten").value.trim();
+
+                if (hoTen === "") {
+                    alert("Vui lòng nhập họ và tên!");
+                    return;
+                }
+
+                const words = hoTen.split(/\s+/);
+                const Ten = words[words.length - 1];
+                document.getElementById("ten").value = Ten;
+            }
+            function Huy() {
+                document.getElementById("hoten").value = "";
+                document.getElementById("ten").value = "";
+            }
+        </script>
+    </body>
+</html>

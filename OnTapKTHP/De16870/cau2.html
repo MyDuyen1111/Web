@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Đề 16870 Câu 2</title>
+        <style>
+            body {
+                text-align: center;
+            }
+            .container {
+                display: inline-block;
+                border: 1px solid black;
+                padding: 20px;
+            }
+            .input-group-top {
+                display: flex;         
+                margin: 20px;
+                gap: 20px;
+            }
+            .input-group-bottom {
+                display: flex;              
+                margin: 20px;
+                gap: 44px;
+            }
+            .button {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                gap: 30px;
+                margin: 20px;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="container">
+            <div class="input-group-top">
+                <label for="input">Nhập số nguyên:</label>
+                <input type="text" id="input">
+            </div>
+            <div class="input-group-bottom">
+                <label for="output">Số chữ số lẻ:</label>
+                <input type="text" id="output">
+            </div>
+            <div class="button">
+                <button onclick="Dem()">Đếm</button>
+                <button onclick="Huy()">Huỷ bỏ</button>
+            </div>
+        </div>
+        <script>
+            function Huy() {
+                document.getElementById("input").value = "";
+                document.getElementById("output").value = "";
+            }
+            
+            function Dem() {
+                var so = document.getElementById("input").value;
+                var dem = 0;
+
+                if (!/^\d+$/.test(so)){
+                    alert("Vui lòng nhập một số nguyên dương hợp lệ!");
+                    return;
+                }
+
+                for (var i = 0; i < so.length; i++) {
+                    var digit = parseInt(so.charAt(i));
+                    if (digit % 2 !== 0) {
+                        dem++;
+                    }                    
+                }
+
+                document.getElementById("output").value = dem;
+            }
+        </script>
+    </body>
+</html>
